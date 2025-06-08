@@ -1,0 +1,230 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #ffb6c1, #ffe4e1);
+  overflow: hidden;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 50px;
+  font-size: 3em;
+  animation: popIn 1s ease-in-out forwards;
+}
+
+p {
+  font-size: 1.5em;
+  margin: 20px auto;
+  max-width: 600px;
+  animation: popIn 1.5s ease-in-out forwards;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.heart, .star {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: pink;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  opacity: 0.8;
+  animation: float 6s infinite ease-in;
+}
+
+.star {
+  background: #fffacd;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.message-box {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+  margin: 30px auto;
+  max-width: 600px;
+    animation: popIn 1.5s ease-in-out forwards;
+}
+
+.gift-container {
+  margin-top: 40px;
+  position: relative;
+}
+
+.gift-box {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  position: relative;
+  cursor: pointer;
+  animation: popIn 1s ease-in-out forwards;
+}
+
+.box {
+  width: 100%;
+  height: 80%;
+  background: #ff69b4;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+
+.lid {
+  width: 100%;
+  height: 40px;
+  background: #ff1493;
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  top: 0;
+  transform-origin: bottom center;
+  transition: transform 0.5s ease;
+  z-index: 2;
+}
+
+.gift-box.open .lid {
+  transform: rotateX(130deg);
+}
+
+#surprise-message {
+  color: #fff;
+  font-size: 1.4em;
+  margin-top: 20px;
+  display: none;
+  animation: popIn 1s ease-in-out forwards;
+}
+
+#surprise-message.hidden {
+  display: none;
+}
+
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: yellow;
+  animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+    }   
+
+    .center-heart {
+        font-size: 3em;
+        cursor: pointer;
+        animation: pulse 1.5s infinite;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+    }
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.hidden {
+  display: none;
+}
+
+.love-button{
+    font-size: 1.2em;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 0 10px #ffb6c1;
+    animation: popIn 1s ease-in-out forwards;
+}
+
+.floating-love {
+    position: absolute;
+    font-size: 1.5em;
+    color: #ff69b4;
+    opacity: 0.9;
+    animation: floatUp 4s linear forwards;
+    pointer-events: none;
+    z-index: 999;
+}
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) ;
+        opacity: 0;
+    }
+}
+
+.scroll-letter{
+    width: 90%;
+    max-width: 600px;
+    margin: 30px auto;
+    background: #fff8f0;
+    border: 4px solid #deb887;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 182, 193, 0.4);
+    overflow: hidden;
+    animation: unroll 1s ease-in-out forwards;
+}
+
+.scroll-top, .scroll-bottom{
+    height: 30px;
+    background: repeating-linear-gradient(45deg, #deb887, #deb887 10px, #f5deb3 10px, #f5deb3 20px);
+}
+
+.scroll-body {
+    padding: 20px;
+    font-family: 'Georgia', serif;
+    font-size: 1.2em;
+    color: #4b2e2e;
+    background: #fff8f0;
+}
+@keyframes unroll {
+    0% {
+        max-height: 0;
+        opacity: 0;
+        transform: scaleY(0.5);
+    }
+    100% {
+        max-height: 1000px;
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
